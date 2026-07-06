@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Divya Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .header-section {
+        padding: 0px 200px 0px 200px;
+        background: #080808;
+        width: 1110 px;
+        height: 70 px;
+      }
+      .header-section header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 200px 30px 200px;
+        background: #363535;
+      }
+      .header-section .social-icons {
+        display: flex;
+        gap: 20px;
+      }
+      .header-section .social-icon {
+        color: white;
+      }
+      .header-section ul {
+        display: flex;
+        list-style: none;
+        gap: 35px;
+      }
+      .header-section ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+      }
+      .header-section ul li a:hover {
+        color: #4caf50;
+      }
+      .hero,
+      .case-studies,
+      .testimonials {
+        padding-left: 100px;
+        padding-right: 100px;
+      }
+      .hero {
+        padding: 40px 100px;
+        background: #080808;
+        color: white;
+      }
+      .hero-content {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+        /* padding: 0px 75px 0px 75px;*/
+      }
+
+      .left {
+        /* width: 538 px;*/
+        flex: none;
+        /*height: 247px;*/
+        top: 201px;
+        left: 180px;
+      }
+      .left h1 {
+        font-size: 56px;
+        margin-bottom: 20px;
+      }
+      .left p {
+        width: 500px;
+        color: #bdbdbd;
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+      .left button {
+        background: #4caf50;
+        color: white;
+        border: none;
+        padding: 15px 35px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .left button:hover {
+        background: #3f9643;
+      }
+      .right {
+        flex: none;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+      .right img {
+        width: 350px;
+        height: 350px;
+        top: 140px;
+        left: 750px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center 20%;
+      }
+      .worked-with {
+        top: 557px;
+        padding-left: 170px;
+        /*margin-left: 100px;*/
+      }
+
+      .worked-with h4 {
+        color: #bdbdbd;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .company-logos {
+        display: flex;
+        gap: 20px;
+      }
+      .company {
+        width: 160px;
+        height: 60px;
+        top: 190px;
+        left: 180px;
+        border: 1px solid #444;
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        color: white;
+      }
+      .vector-wrapper {
+        position: relative;
+        width: 20px;
+        height: 20px;
+      }
+
+      .vector {
+        position: absolute;
+        width: 16px;
+        height: auto;
+      }
+
+      .vector-1 {
+        top: 0;
+        left: 0;
+      }
+
+      .vector-2 {
+        top: 10px;
+        left: 0px;
+      }
+      .company img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+      }
+      .company span {
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .case-studies > p,
+      .testimonials > p {
+        margin: 0 auto 40px;
+      }
+      .case-studies {
+        /* top: 780 px; */
+        left: 208 px;
+        /*padding: 60px 100px;*/
+        background: white;
+      }
+
+      .case-studies h2 {
+        margin-top: 10px;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      .case-studies p {
+        width: 600px;
+        text-align: center;
+        line-height: 1.6;
+      }
+      .case-content h3 {
+        font-size: 32px;
+        margin: 10px 0;
+        font-weight: 700;
+        color: #080808;
+      }
+
+      .case-content p {
+        width: 420px;
+        margin: 0 0 10px 0;
+        text-align: left;
+        line-height: 1.8;
+        font-size: 16px;
+        color: #6b6b6b;
+      }
+      .case-study {
+        display: flex;
+        align-items: center;
+        gap: 0px;
+        padding: 0px 200px;
+        margin-bottom: 20px;
+      }
+      .case-content button {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .btn-fintech {
+        background: #ffb400;
+      }
+
+      .btn-edtech {
+        background: #3d5afe;
+      }
+
+      .btn-pharma {
+        background: #00b894;
+      }
+      .tag {
+        display: inline-block;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-family: Arial, sans-serif;
+        font-weight: 600;
+      }
+      .fintech {
+        background: #fff6e5;
+        color: #ff9f1c;
+      }
+      .edtech {
+        background: #e6f0ff;
+        color: #3366ff;
+      }
+      .pharma {
+        background: #dff7ef;
+        color: #00a676;
+      }
+
+      .case-content {
+        flex: 1;
+      }
+      .case-image {
+        flex: 1;
+      }
+      .case-image img {
+        width: 300px;
+        height: 210px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+      .reverse {
+        flex-direction: row-reverse;
+      }
+      .testimonials {
+        background: #080808;
+        color: white;
+        padding: 60px 20px;
+      }
+      .testimonials h2 {
+        text-align: center;
+        font-size: 42px;
+        color: white;
+        margin-bottom: 16px;
+      }
+      .testimonials p {
+        width: 650px;
+        text-align: center;
+        color: #a0a0a0;
+        line-height: 1.8;
+      }
+      .testimonial-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin: 0px 256px;
+        gap: 30px;
+      }
+      .testimonial-card {
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 0px 10px;
+        position: relative;
+      }
+      .quote {
+        font-size: 55px;
+        font-weight: bold;
+        position: absolute;
+        top: -28px;
+        left: 18px;
+        background: #080808;
+        padding: 0 8px;
+      }
+      .testimonial-card p {
+        width: 100%;
+        max-width: 400px;
+        color: #a0a0a0;
+        padding: 0;
+        margin: 12px;
+        line-height: 1.6;
+        /* margin-bottom: 20px;*/
+        padding: 0px 20px 20px;
+      }
+      .client {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        gap: 20px;
+        padding-left: 20px;
+      }
+      .client img {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .client h4 {
+        font-size: 24px;
+        color: white;
+      }
+      .Recent-work {
+        background: white;
+        padding: 60px 100px;
+      }
+      .recent-work h2 {
+        text-align: center;
+        font-size: 42px;
+        color: #080808;
+        margin: 20px 0px;
+      }
+      .recent-description {
+        width: 40%;
+        margin: 0 auto 50px;
+        text-align: center;
+        line-height: 1.8;
+        color: #8a8a8a;
+      }
+      .work-container {
+        margin-left: 350px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .card-2 {
+        margin-left: -350px;
+      }
+      .work-card {
+        flex: 1;
+      }
+      .work-card img {
+        width: 50%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .work-card h3 {
+        font-size: 34px;
+        margin-bottom: 20px;
+        color: #080808;
+      }
+      .work-card p {
+        color: #8a8a8a;
+        width: 50%;
+        text-align: left;
+        /*line-height: 1.8;*/
+        margin-bottom: 25px;
+      }
+      .recent-btn {
+        background: #4caf50;
+        color: white;
+        border: none;
+        padding: 14px 28px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .recent-btn:hover {
+        background: #3f9643;
+      }
+      .contact {
+        background: #080808;
+        padding: 80px 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .contact-container {
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+      }
+
+      .contact h2 {
+        color: #fff;
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+
+      .contact-text {
+        color: #9d9d9d;
+        font-size: 16px;
+        line-height: 1.8;
+        margin-bottom: 40px;
+      }
+
+      .input-group {
+        text-align: left;
+        margin-bottom: 20px;
+      }
+
+      .input-group label {
+        display: block;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .input-group input,
+      .input-group textarea {
+        width: 100%;
+        padding: 14px 16px;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        font-size: 15px;
+        background: #ffffff;
+      }
+
+      .input-group textarea {
+        height: 130px;
+        resize: none;
+      }
+
+      .submit-btn {
+        width: 100%;
+        height: 52px;
+        border: none;
+        border-radius: 4px;
+        background: #3fae2a;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 12px 30px rgba(63, 174, 42, 0.35);
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background: #369623;
+      }
+
+      button span {
+        margin-left: 8px;
+        font-size: 18px;
+      }
+
+      footer {
+        background: #1d1d1d;
+        color: #bdbdbd;
+        text-align: center;
+        padding: 22px 0;
+        font-size: 15px;
+      }
+
+      @media (max-width: 768px) {
+        /* Header: shrink huge side padding, let nav wrap */
+        .header-section header {
+          flex-direction: column;
+          gap: 15px;
+          padding: 20px;
+        }
+        .header-section ul {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 18px;
+        }
+
+        /* Hero: stack text over image, fluid text width */
+        .hero {
+          padding: 40px 20px;
+        }
+        .hero-content {
+          flex-direction: column;
+          gap: 24px;
+        }
+        .left h1 {
+          font-size: 36px;
+        }
+        .left p {
+          width: 100%;
+        }
+        .right img {
+          width: 220px;
+          height: 220px;
+        }
+        .worked-with {
+          padding-left: 0;
+          text-align: center;
+        }
+        .company-logos {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        /* Case studies: stack content + image, fluid widths */
+        .case-studies,
+        .testimonials {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .case-studies p {
+          width: 100%;
+        }
+        .case-study,
+        .case-study.reverse {
+          flex-direction: column;
+          padding: 0;
+          gap: 16px;
+        }
+        .case-content p {
+          width: 100%;
+        }
+        .case-image,
+        .case-content {
+          width: 100%;
+        }
+        .case-image img {
+          width: 100%;
+          height: auto;
+        }
+
+        /* Testimonials: single column, remove giant side margins */
+        .testimonials h2 {
+          font-size: 32px;
+        }
+        .testimonials p {
+          width: 100%;
+        }
+        .testimonial-container {
+          margin: 0;
+        }
+
+        /* Recent work: cancel the margin-left/-left offset hack, stack cards */
+        .recent-work {
+          padding: 40px 20px;
+        }
+        .recent-description {
+          width: 90%;
+        }
+        .work-container {
+          margin-left: 0;
+          flex-direction: column;
+        }
+        .card-2 {
+          margin-left: 0;
+        }
+        .work-card img,
+        .work-card p {
+          width: 100%;
+        }
+
+        /* Contact heading scale */
+        .contact h2 {
+          font-size: 34px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header Section -->
+    <section class="header-section">
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Case Studies</a>
+            </li>
+            <li>
+              <a href="#">Testimonials</a>
+            </li>
+            <li>
+              <a href="#">Recent Work</a>
+            </li>
+            <li>
+              <a href="#">Get In Touch</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-linkedin-in social-icon"></i></a>
+          <a href="#"><i class="fab fa-behance social-icon"></i></a>
+          <a href="#"><i class="fab fa-twitter social-icon"></i></a>
+        </div>
+      </header>
+    </section>
+
+    <!-- hero Section -->
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="left">
+          <h1>Your Name Here</h1>
+          <p>
+            Intro text : Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+          </p>
+          <button>Let's get started</button>
+        </div>
+
+        <div class="right">
+          <img src="/images/hero profile pic.jpg" alt="Developer Profile" />
+        </div>
+      </div>
+      <div class="worked-with">
+        <h4>worked-with</h4>
+        <div class="company-logos">
+          <div class="company">
+            <div class="vector-wrapper">
+              <img src="/images/Vector 1.png" alt="" class="vector vector-1" />
+              <img src="images/Vector 2.png" alt="" class="vector vector-2" />
+            </div>
+            <span>ClickUp</span>
+          </div>
+          <div class="company">
+            <img src="/images/dropbox-icon.png" alt="Dropbox" />
+            <span>Dropbox</span>
+          </div>
+          <div class="company">
+            <img src="images/paychex.png" alt="Paychex" />
+            <span>Paychex</span>
+          </div>
+          <div class="company">
+            <img src="/images/elastic.png" alt="Elastic" />
+            <span>Elastic</span>
+          </div>
+          <div class="company">
+            <img src="images/paychex.png" alt="Stripe" />
+            <span>Stripe</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies Section -->
+
+    <section class="case-studies">
+      <h2>Case Studies</h2>
+      <p>
+        Solving user & business problems since last 15+ years. Lorem ipsum dolor
+        sit amet , consectetur adipiscing elit , sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua
+      </p>
+
+      <!-- Case Study 1-->
+
+      <div class="case-study">
+        <div class="case-content">
+          <div class="tag fintech">Fintech</div>
+
+          <h3>Work name here</h3>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          <button class="btn-fintech">View case study</button>
+        </div>
+
+        <div class="case-image">
+          <img src="/images/casestudies pic 1.jpg" alt="Case Study" />
+        </div>
+      </div>
+
+      <!-- Case Study 2 -->
+      <div class="case-study reverse">
+        <div class="case-content">
+          <div class="tag edtech">EdTech</div>
+
+          <h3>Work name here</h3>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          <button class="btn-edtech">View case study</button>
+        </div>
+
+        <div class="case-image">
+          <img src="/images/casestudies pic 2.jpg" alt="Case Study" />
+        </div>
+      </div>
+
+      <!-- Case Study 3 -->
+      <div class="case-study">
+        <div class="case-content">
+          <div class="tag pharma">Pharma</div>
+
+          <h3>Work name here</h3>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          <button class="btn-pharma">View case study</button>
+        </div>
+
+        <div class="case-image">
+          <img src="/images/case studies pic 3.jpg" alt="Case Study" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+
+    <section class="testimonials">
+      <h2>Testimonials</h2>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+
+      <div class="testimonial-container">
+        <!-- Card 1 -->
+        <div class="testimonial-card">
+          <div class="quote">❝</div>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          <div class="client">
+            <img src="/images/testimonial profile 1.jpg" alt="Client" />
+
+            <h4>Client Name</h4>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+
+        <div class="testimonial-card">
+          <div class="quote">❝</div>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          <div class="client">
+            <img src="/images/testimonial profile 2.jpg" alt="Client" />
+
+            <h4>Client Name</h4>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+
+        <div class="testimonial-card">
+          <div class="quote">❝</div>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          <div class="client">
+            <img src="images/testimonial profile 3.jpg" alt="Client" />
+
+            <h4>Client Name</h4>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="testimonial-card">
+          <div class="quote">❝</div>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          <div class="client">
+            <img src="images/testimonial profile 4.jpg" alt="Client" />
+
+            <h4>Client Name</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Work -->
+    <section class="recent-work">
+      <h2>Recent work</h2>
+      <p class="recent-description">
+        Solving user and business problems since last 15 years.Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua.
+      </p>
+      <div class="work-container">
+        <!--card 1-->
+        <div class="work-card card-1">
+          <img src="/images/recent work pic 1.jpg" alt="img" />
+          <h3>Work name here</h3>
+          <p>
+            labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut
+            labore et dolore magna.
+          </p>
+          <button class="recent-btn">Know more</button>
+        </div>
+
+        <!--card 2-->
+        <div class="work-card card-2">
+          <img src="/images/recent work pic 2.jpg" alt="img" />
+          <h3>Work name here</h3>
+          <p>
+            Rempor incididunt ut labore et dolore magna aliqua . sed do eiusmod
+            tempor incididunt u
+          </p>
+          <button class="recent-btn">Know more</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get in Touch-->
+    <section class="contact">
+      <div class="contact-container">
+        <h2>Get In Touch</h2>
+
+        <p class="contact-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <!-- form -->
+        <form>
+          <div class="input-group">
+            <label>Email</label>
+            <input type="email" placeholder="Please enter your email" />
+          </div>
+
+          <div class="input-group">
+            <label>Mobile</label>
+            <input type="tel" placeholder="Enter mobile" />
+          </div>
+
+          <div class="input-group">
+            <label>Message</label>
+            <textarea placeholder="Enter your message"></textarea>
+          </div>
+
+          <button class="submit-btn" type="submit">
+            Submit <span>&#8250;</span>
+          </button>
+        </form>
+      </div>
+    </section>
+    <footer>Made with ❤️</footer>
+  </body>
+</html>
