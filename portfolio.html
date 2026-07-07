@@ -19,16 +19,14 @@
       }
 
       .header-section {
-        padding: 0px 200px 0px 200px;
+        padding: 0px 200px;
         background: #080808;
-        width: 1110 px;
-        height: 70 px;
       }
       .header-section header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 30px 200px 30px 200px;
+        padding: 30px 200px;
         background: #363535;
       }
       .header-section .social-icons {
@@ -177,14 +175,14 @@
         margin: 0 auto 40px;
       }
       .case-studies {
-        left: 208 px;
         background: white;
+        padding: 60px 20px;
       }
 
       .case-studies h2 {
-        margin-top: 10px;
         text-align: center;
         margin-bottom: 16px;
+        font-size: 32px;
       }
 
       .case-studies p {
@@ -210,8 +208,9 @@
       .case-study {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 0px;
-        padding: 0px 200px;
+        padding: 0px 250px;
         margin-bottom: 20px;
       }
       .case-content button {
@@ -278,7 +277,7 @@
       }
       .testimonials h2 {
         text-align: center;
-        font-size: 42px;
+        font-size: 32px;
         color: white;
         margin-bottom: 16px;
       }
@@ -339,7 +338,7 @@
       }
       .Recent-work {
         background: white;
-        padding: 60px 100px;
+        padding: 60px 40px;
       }
       .recent-work h2 {
         text-align: center;
@@ -359,7 +358,7 @@
         display: flex;
         justify-content: center;
         gap: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
       }
       .card-2 {
         margin-left: -350px;
@@ -376,6 +375,7 @@
 
       .work-card h3 {
         font-size: 34px;
+        margin-top: 20px;
         margin-bottom: 20px;
         color: #080808;
       }
@@ -485,18 +485,82 @@
         padding: 22px 0;
         font-size: 15px;
       }
+      .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 26px;
+        cursor: pointer;
+      }
 
       @media (max-width: 768px) {
         /* Header: shrink huge side padding, let nav wrap */
-        .header-section header {
-          flex-direction: column;
-          gap: 15px;
-          padding: 20px;
+        .header-section {
+          padding: 0;
+          width: 100%;
         }
-        .header-section ul {
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 18px;
+
+        .header-section header {
+          padding: 15px 20px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 30px;
+        }
+        .hamburger {
+          display: block;
+          font-size: 28px;
+          cursor: pointer;
+          order: 3;
+        }
+        .social-icons {
+          display: flex;
+          gap: 15px;
+          order: 1;
+        }
+        #nav-menu {
+          position: absolute;
+          top: 55px; /* below header */
+          right: 20px; /* align with hamburger */
+          left: auto;
+          width: 220px;
+          background: #363535;
+          border-radius: 6px;
+          display: none;
+          z-index: 1000;
+          overflow: hidden;
+          /*border-top: 1px solid #555;
+          order: 2;*/
+        }
+        #nav-menu.active {
+          display: block;
+        }
+
+        #nav-menu ul {
+          display: flex;
+          flex-direction: column;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+        #nav-menu ul li {
+          border-bottom: 1px solid #555;
+        }
+        #nav-menu ul li:last-child {
+          border-bottom: none;
+        }
+
+        #nav-menu ul li a {
+          display: block;
+          padding: 15px 20px;
+          color: white;
+          text-decoration: none;
+          text-align: left;
+        }
+
+        #nav-menu ul li a:hover {
+          background: #4caf50;
         }
 
         /* Hero: stack text over image, fluid text width */
@@ -594,7 +658,11 @@
     <!-- header Section -->
     <section class="header-section">
       <header>
-        <nav>
+        <button class="hamburger" id="hamburger">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav id="nav-menu">
           <ul>
             <li>
               <a href="#">Home</a>
@@ -886,5 +954,13 @@
       </div>
     </section>
     <footer>Made with ❤️</footer>
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
